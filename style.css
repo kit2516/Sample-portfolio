@@ -441,20 +441,9 @@ body.light-mode #theme-toggle:hover {
   color: #fff;
   border: 1px solid #ff4c29;
 }
-body.light-mode .project-item {
-  background: #fff;
-  color: #222;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-body.light-mode .contact {
-  background: #f0f0f0;
-  color: #222;
-}
-body.light-mode .social-links a {
-  color: #ff4c29;
-}
-body.light-mode .social-links a:hover {
-  color: #222;
+
+html {
+  scroll-behavior: smooth;
 }
 
 #theme-toggle {
