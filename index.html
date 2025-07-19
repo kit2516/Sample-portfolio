@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joemar | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Joemar Dubria</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contacts</a>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Hello<span>.</span></h2>
+      <h3>I’m Joemar</h3>
+      <h1><span id="typewriter"></span></h1>
+      <div class="buttons">
+        <a href="#" class="btn-primary">Got a project?</a>
+        <a href="#" class="btn-outline">My resume</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="images/profile.png" alt="Joemar Profile" />
+    </div>
+  </section>
+
+  <section class="tech-stack">
+    <ul>
+      <li>HTML5</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Node.js</li>
+      <li>React</li>
+      <li>Git</li>
+      <li>GitHub</li>
+    </ul>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="services">
+        <div>💻 Website Development</div>
+        <div>📱 App Development</div>
+        <div>🌐 Website Hosting</div>
+      </div>
+      <div class="about-text">
+        <h2>About me</h2>
+        <p>I started my software journey from photography. Through that, I learned to love the process of creating from scratch. Since then, this has led me to software development as it fulfills my love for learning and building things.</p>
+        <div class="stats">
+          <div><strong>120+</strong><br>Completed Projects</div>
+          <div><strong>95%</strong><br>Client satisfaction</div>
+          <div><strong>10+</strong><br>Years of experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project-item">
+        <img src="images/sample1.jpg" alt="Project 1" class="project-img" />
+        <h3>Portfolio Website</h3>
+        <p>A modern, responsive portfolio website built with HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="project-item">
+        <img src="images/sample2.jpg" alt="Project 2" class="project-img" />
+        <h3>Mobile App UI</h3>
+        <p>UI/UX design for a productivity mobile app, focusing on simplicity and usability.</p>
+      </div>
+      <div class="project-item">
+        <video class="project-video" controls width="320">
+          <source src="images/sample-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <h3>App Demo</h3>
+        <p>Demo video showcasing the main features of a recent web application project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:joemar@example.com">joemar@example.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+      <div class="social-links">
+        <a href="https://facebook.com/joemar" target="_blank" rel="noopener">Facebook</a> |
+        <a href="https://twitter.com/joemar" target="_blank" rel="noopener">Twitter</a> |
+        <a href="https://linkedin.com/in/joemar" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // Theme toggle logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    function setTheme(mode) {
+      if (mode === 'light') {
+        body.classList.add('light-mode');
+        themeToggle.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.remove('light-mode');
+        themeToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+    themeToggle.addEventListener('click', () => {
+      if (body.classList.contains('light-mode')) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    });
+    // On load, set theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      setTheme('light');
+    }
+  </script>
+</body>
+</html>
